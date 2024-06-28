@@ -1,0 +1,107 @@
+/* components/SidebarMenu.module.css */
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.toggleButton {
+  background-color: black;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: -60px;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  padding: 0;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.change:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.change:nth-child(2) {
+  opacity: 0;
+}
+
+.change:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.menu {
+  margin-top: 60px;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 20px 0;
+  position: relative;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: #007bff; /* Vibrant blue color */
+}
+
+.subMenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #007bff; /* Vibrant blue color */
+  padding: 10px;
+  display: none;
+  z-index: 1001;
+}
+
+.menu li:hover .subMenu {
+  display: block;
+}
+
+.subMenu li {
+  margin: 10px 0;
+}
+
+.subMenu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 8px 16px;
+}
+
+.subMenu a:hover {
+  background-color: #0056b3; /* Darker shade of blue */
+}
