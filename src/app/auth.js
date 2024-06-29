@@ -18,6 +18,7 @@ export const {auth,signIn,handlers:{GET,POST}} = NextAuth({
             },
         }),
     ],
+    session:"jwt",
     secret:process.env.AUTH_SECERT,
     pages:{
         signIn:"/login",
